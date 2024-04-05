@@ -5,7 +5,7 @@ local ACCOUNT_IDS = {
 
 local LISTING_TYPE = "Misc" -- Type of item to list
 local TO_LIST = "Bucket" -- Name of pet/item to list
-local LISTING_PRICE = 392000000 -- Amount of gems to put up listing for
+local LISTING_PRICE = 121000000 -- Amount of gems to put up listing for
 local AMOUNT = 1 -- Amount of item to list
 
 
