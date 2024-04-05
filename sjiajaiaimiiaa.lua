@@ -5,8 +5,8 @@ local ACCOUNT_IDS = {
 
 local LISTING_TYPE = "Misc" -- Type of item to list
 local TO_LIST = "Bucket" -- Name of pet/item to list
-local LISTING_PRICE = 121000000 -- Amount of gems to put up listing for
-local AMOUNT = 5000 -- Amount of item to list
+local LISTING_PRICE = 392000000 -- Amount of gems to put up listing for
+local AMOUNT = 1 -- Amount of item to list
 
 
 
@@ -32,13 +32,14 @@ task.spawn(function()
                 print("Error occurred when putting up listing: " .. listingMessage)
             end
         end
-        task.wait()
+        task.wait(1)
     end
 end)
 
 print("Booth Service Starting")
-BoothsBroadcast.OnClientEvent:Connect(function(_, boothData)
+BoothsBroadcast.OnClientEvent:Connect(funct.,ion(_, boothData)
     if type(boothData) == "table" then
+        print("Got Listing")
         local boothOwnerID = boothData["PlayerID"]
         if boothOwnerID ~= game.Players.LocalPlayer.UserId and table.find(ACCOUNT_IDS, boothOwnerID) then
             print("Got listing from " .. tostring(boothOwnerID))
@@ -65,6 +66,8 @@ BoothsBroadcast.OnClientEvent:Connect(function(_, boothData)
                         print("Error occurred purchasing listing: " .. purchaseResult)
                     end
                 end
+            else
+                print("Not selected booth owner ID: " .. tostring(boothOwnerID))
             end
         end
     end
